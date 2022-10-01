@@ -5,9 +5,9 @@ from dotenv import load_dotenv
 import argparse
 
 
-def createParser():
+def create_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-url', nargs='?', default='https://jenyay.net/Programming/Argparse')
+    parser.add_argument('url', help='Введите URL')
     return parser
 
 
@@ -42,9 +42,9 @@ def is_bitlink(bitly_token, user_link):
 def main():
     load_dotenv()
 
-    parser = createParser()
-    urlparse = parser.parse_args()
-    user_link = format(urlparse.url)
+    parser = create_parser()
+    parse_url = parser.parse_args()
+    user_link = parse_url.url
 
     bitly_token = os.getenv('BITLY_TOKEN')
 
