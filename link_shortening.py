@@ -43,8 +43,8 @@ def main():
     load_dotenv()
 
     parser = create_parser()
-    parse_url = parser.parse_args()
-    user_link = parse_url.url
+    url_parser = parser.parse_args()
+    user_link = url_parser.url
 
     bitly_token = os.getenv('BITLY_TOKEN')
 
